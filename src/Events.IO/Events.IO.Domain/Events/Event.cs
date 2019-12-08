@@ -1,11 +1,12 @@
 ﻿using Events.IO.Domain.Core.Models;
+using Events.IO.Domain.Organizers;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Events.IO.Domain.Models
+namespace Events.IO.Domain.Events
 {
     public class Event : Entity<Event>
     {
@@ -32,7 +33,6 @@ namespace Events.IO.Domain.Models
             this.Price = price;
             this.Online = online;
             this.Sponsor = sponsor;
-            this.ValidationErros = new Dictionary<string, string>();
         }
         #endregion
 
@@ -51,7 +51,6 @@ namespace Events.IO.Domain.Models
         public Address Address { get; private set; }
         public Organizer Organizer { get; private set; }
         public string Sponsor { get; private set; }
-        public Dictionary<string, string> ValidationErros { get; set; }
 
         #endregion
 
