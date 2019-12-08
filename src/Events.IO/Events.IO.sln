@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 -
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.IO.Domain", "Events.IO.Domain\Events.IO.Domain.csproj", "{5F96BD52-E0CF-4CEA-975F-A5AD85399EA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.IO.Domain.Core", "Events.IO.Domain.Core\Events.IO.Domain.Core.csproj", "{9064931B-2BF1-46E8-8B3A-3B4618E4EAA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{5F96BD52-E0CF-4CEA-975F-A5AD85399EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F96BD52-E0CF-4CEA-975F-A5AD85399EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F96BD52-E0CF-4CEA-975F-A5AD85399EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9064931B-2BF1-46E8-8B3A-3B4618E4EAA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9064931B-2BF1-46E8-8B3A-3B4618E4EAA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9064931B-2BF1-46E8-8B3A-3B4618E4EAA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9064931B-2BF1-46E8-8B3A-3B4618E4EAA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{4C1808BC-A548-4975-A32D-A2A30F1B6AA0} = {53D281D8-1AA2-4442-AE01-51DAAC909C02}
 		{77E4B3B6-9531-44AE-82E0-33FA8D65DAA3} = {53D281D8-1AA2-4442-AE01-51DAAC909C02}
 		{5F96BD52-E0CF-4CEA-975F-A5AD85399EA0} = {4780F82F-0D63-4D79-87A4-C530ADCC5859}
+		{9064931B-2BF1-46E8-8B3A-3B4618E4EAA8} = {4780F82F-0D63-4D79-87A4-C530ADCC5859}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CDDC5B2C-8FC1-4477-B328-3BAB32B2B635}
