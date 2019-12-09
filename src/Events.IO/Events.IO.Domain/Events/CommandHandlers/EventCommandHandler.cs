@@ -1,20 +1,23 @@
-﻿using Events.IO.Domain.Core.SystemEvents;
+﻿using Events.IO.Domain.CommandHandlers;
+using Events.IO.Domain.Core.SystemEvents;
 using Events.IO.Domain.Events.Commands;
 using Events.IO.Domain.Events.Repository;
+using Events.IO.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Events.IO.Domain.Events.CommandHandlers
 {
-    public class EventCommandHandler : 
+    public class EventCommandHandler : CommandHandler,
         IHandler<RegisterEventCommand>,
         IHandler<UpdateEventCommand>,
         IHandler<RemoveEventCommand>
     {
         private readonly IEventRepository _eventRepository;
 
-        public EventCommandHandler(IEventRepository eventRepository)
+        public EventCommandHandler(IEventRepository eventRepository, IUnitOfWork _unitOfWork)
+            :base(_unitOfWork)
         {
             _eventRepository = eventRepository;
         }
@@ -24,10 +27,16 @@ namespace Events.IO.Domain.Events.CommandHandlers
             var e = new Event(message.Name, message.StartDate, message.EndDate, message.Free, message.Price, message.Online, message.Sponsor);
             if (!e.IsValid())
             {
-                //handle error
+                NotifyValidationsErros(e.ValidationResult);
+                return;
             }
 
             _eventRepository.Add(e);
+
+            if (Commit())
+            {
+                Console.WriteLine("Event registered successfully");
+            }
         }
 
         public void Handle(UpdateEventCommand message)
